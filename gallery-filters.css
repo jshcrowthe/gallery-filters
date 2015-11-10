@@ -1,8 +1,9 @@
 :host {
-  display: block;
-  box-sizing: border-box;
-  --paper-tabs-selection-bar-color: #333333;
   --paper-tab-ink: #ECECEC;
+  --paper-tabs-selection-bar-color: #333333;
+  box-sizing: border-box;
+  display: block;
+  position: relative;
   width: 100%;
 }
 
