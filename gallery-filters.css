@@ -3,6 +3,7 @@
   --paper-tabs-selection-bar-color: #333333;
   box-sizing: border-box;
   display: block;
+  padding: 3px 0 2px;
   position: relative;
   width: 100%;
 }
