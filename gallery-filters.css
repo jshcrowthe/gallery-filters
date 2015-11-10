@@ -6,6 +6,10 @@
   width: 100%;
 }
 
+paper-tabs {
+  background-color: #ffffff;
+}
+
 paper-tab {
   opacity: 0.7;
 }
