@@ -1,0 +1,82 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../paper-tabs/paper-tabs.html">
+<!--
+An element providing a solution to no problem in particular.
+
+Example:
+
+    <gallery-filters></gallery-filters>
+
+@group Seed Elements
+@element gallery-filters
+@demo demo/index.html
+@hero hero.svg
+-->
+<dom-module id="gallery-filters">
+  <link rel="import" type="css" href="gallery-filters.css">
+  <template>
+    <h1>&lt;gallery-filters&gt;</h1>
+    <paper-tabs noink selected='{{selected}}' attr-for-selected='data-filter'>
+      <paper-tab data-filter='all'>
+        <span class='fs-all-icon'>All</span>
+      </paper-tab>
+      <paper-tab data-filter='photos'>
+        <div class='layout vertical center-justified center'>
+          <i class="fs-memories-icon fs-photos-icon"></i>
+          <small>Photos</small>
+        </div>
+      </paper-tab>
+      <paper-tab data-filter='stories'>
+        <div class='layout vertical center-justified center'>
+          <i class="fs-memories-icon fs-stories-icon"></i>
+          <small>Stories</small>
+        </div>
+      </paper-tab>
+      <paper-tab data-filter='documents'>
+        <div class='layout vertical center-justified center'>
+          <i class="fs-memories-icon fs-documents-icon"></i>
+          <small>Documents</small>
+        </div>
+      </paper-tab>
+      <paper-tab data-filter='audio'>
+        <div class='layout vertical center-justified center'>
+          <i class="fs-memories-icon fs-audio-icon"></i>
+          <small>Audio</small>
+        </div>
+      </paper-tab>
+    </paper-tabs>
+  </template>
+
+</dom-module>
+
+<script>
+
+  Polymer({
+
+    is: 'gallery-filters',
+
+    properties: {
+      selected: {
+        type: String,
+        value: 'all',
+        observer: '_broadcastFilter'
+      }
+    },
+
+    _broadcastFilter: function(val) {
+      this.fire('gallery-filter-changed', {
+        filter: val
+      });
+    },
+  });
+
+</script>
