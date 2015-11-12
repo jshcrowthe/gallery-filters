@@ -14,6 +14,11 @@ paper-tabs {
 
 paper-tab {
   opacity: 0.7;
+  overflow: hidden;
+}
+
+paper-tab > * {
+  width: 100%;
 }
 
 paper-tab.iron-selected {

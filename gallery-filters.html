@@ -9,6 +9,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../paper-tabs/paper-tabs.html">
+<link rel="import" href="../iron-media-query/iron-media-query.html">
 <!--
 An element providing a solution to no problem in particular.
 
@@ -24,32 +25,36 @@ Example:
 <dom-module id="gallery-filters">
   <link rel="import" type="css" href="gallery-filters.css">
   <template>
+    <iron-media-query query="(max-width: 979px)" query-matches="{{mobile}}">
+    </iron-media-query>
     <paper-tabs noink selected='{{selected}}' attr-for-selected='data-filter'>
       <paper-tab data-filter='all'>
-        <span class='fs-all-icon'>All</span>
+        <div class='layout vertical center-justified center'>
+          <span class='fs-all-icon'>All</span>
+        </div>
       </paper-tab>
       <paper-tab data-filter='photos'>
         <div class='layout vertical center-justified center'>
           <i class="fs-memories-icon fs-photos-icon"></i>
-          <small>Photos</small>
+          <small hidden='[[!mobile]]'>Photos</small>
         </div>
       </paper-tab>
       <paper-tab data-filter='stories'>
         <div class='layout vertical center-justified center'>
           <i class="fs-memories-icon fs-stories-icon"></i>
-          <small>Stories</small>
+          <small hidden='[[!mobile]]'>Stories</small>
         </div>
       </paper-tab>
       <paper-tab data-filter='documents'>
         <div class='layout vertical center-justified center'>
           <i class="fs-memories-icon fs-documents-icon"></i>
-          <small>Documents</small>
+          <small hidden='[[!mobile]]'>Documents</small>
         </div>
       </paper-tab>
       <paper-tab data-filter='audio'>
         <div class='layout vertical center-justified center'>
           <i class="fs-memories-icon fs-audio-icon"></i>
-          <small>Audio</small>
+          <small hidden='[[!mobile]]'>Audio</small>
         </div>
       </paper-tab>
     </paper-tabs>
