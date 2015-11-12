@@ -1,15 +1,17 @@
 :host {
   --paper-tab-ink: #ECECEC;
   --paper-tabs-selection-bar-color: #333333;
+  --gallery-filter-background: #FFFFFF;
   box-sizing: border-box;
   display: block;
   padding: 3px 0 2px;
   position: relative;
   width: 100%;
+  background: var(--gallery-filter-background);
 }
 
 paper-tabs {
-  background-color: #ffffff;
+  background-color: var(--gallery-filter-background);
 }
 
 paper-tab {
